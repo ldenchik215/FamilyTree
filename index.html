@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Руководство по исследованию родословной</title>
+  <meta name="description" content="Статическое руководство по глубокому генеалогическому исследованию: методика, источники, таблицы, структура архива и демо-проект.">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержанию</a>
+  <button class="mobile-nav-toggle" type="button" aria-label="Открыть оглавление" aria-controls="sidebar" aria-expanded="false">☰ Оглавление</button>
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <img src="assets/images/favicon.svg" width="36" height="36" alt="">
+      <div>
+        <strong>Родословное исследование</strong>
+        <span>практическое руководство</span>
+      </div>
+    </div>
+    <nav class="toc" aria-label="Оглавление сайта">
+      <a href="#start">Начало</a>
+      <a href="#logic">Логика и доказательства</a>
+      <a href="#roadmap">Дорожная карта</a>
+      <a href="#sources">Источники</a>
+      <a href="#documents">Работа с документами</a>
+      <a href="#storage">Архив и структура папок</a>
+      <a href="#tables">Таблицы и шаблоны</a>
+      <a href="#localities">Населённые пункты</a>
+      <a href="#dna">ДНК и приватность</a>
+      <a href="#tools">Инструменты и ссылки</a>
+      <a href="#errors">Типичные ошибки</a>
+      <a href="#download">Демо-проект</a>
+    </nav>
+    <div class="sidebar-card">
+      <p>Сайт можно открыть локально. Для модульного JavaScript лучше запускать через локальный сервер.</p>
+      <a class="button button-small" href="downloads/demo_proj.zip" download>Скачать демо ZIP</a>
+    </div>
+  </aside>
+
+  <main id="main" class="content">
+    <section id="start" class="hero section-block">
+      <div class="hero-text">
+        <span class="eyebrow">Руководство + демонстрационный архив</span>
+        <h1>Как вести глубокое исследование родословной до 10-го поколения и дальше</h1>
+        <p class="lead">Методика построена вокруг главного принципа: двигаться от известного к неизвестному, доказывая каждую связь документами, а гипотезы, противоречия и отрицательные результаты фиксировать отдельно.</p>
+        <div class="hero-actions">
+          <a class="button" href="downloads/demo_proj.zip" download>Скачать демо-проект исследования</a>
+          <a class="button ghost" href="#storage">Посмотреть структуру архива</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <img src="assets/images/hero-archive.svg" alt="" loading="eager">
+      </div>
+    </section>
+
+    <section class="section-block compact-grid" aria-label="Ключевые принципы">
+      <article class="metric-card">
+        <strong>1 связь</strong>
+        <span>один исследовательский вопрос: «кто родители конкретного человека?»</span>
+      </article>
+      <article class="metric-card">
+        <strong>4 статуса</strong>
+        <span>предание, гипотеза, вероятный факт, подтверждённый факт</span>
+      </article>
+      <article class="metric-card">
+        <strong>3–2–1</strong>
+        <span>резервное копирование: три копии, два носителя, одна копия вне дома</span>
+      </article>
+      <article class="metric-card">
+        <strong>10+</strong>
+        <span>после 10-го поколения исследуется уже не только человек, но и сообщество</span>
+      </article>
+    </section>
+
+    <section id="logic" class="section-block">
+      <div class="section-heading">
+        <span class="eyebrow">Методология</span>
+        <h2>Логика исследования и уровни доказанности</h2>
+        <p>Полноценный результат — это не только дерево. В проекте должны быть дерево, доказательная база, цифровой архив, журнал поиска, список гипотез, таблица противоречий, история населённых пунктов и отчёты по линиям.</p>
+      </div>
+      <div class="two-col">
+        <div>
+          <h3>Правильное движение</h3>
+          <ol class="steps">
+            <li><span>01</span>Зафиксировать себя, родителей, бабушек и дедушек.</li>
+            <li><span>02</span>Подтвердить каждую связь ребёнок → родители.</li>
+            <li><span>03</span>Установить точное место, конфессию, сословие и период.</li>
+            <li><span>04</span>Подобрать источники по месту и времени: ЗАГС, метрики, исповеди, ревизии, военные документы.</li>
+            <li><span>05</span>Записать вывод, противоречия и следующий вопрос.</li>
+          </ol>
+        </div>
+        <div class="panel">
+          <h3>Шкала статусов</h3>
+          <table>
+            <thead><tr><th>Статус</th><th>Как использовать</th></tr></thead>
+            <tbody>
+              <tr><td><span class="status legend">Предание</span></td><td>Семейный рассказ без документа. Не удалять, но не считать фактом.</td></tr>
+              <tr><td><span class="status hypothesis">Гипотеза</span></td><td>Логичная версия с ограниченной доказательной базой.</td></tr>
+              <tr><td><span class="status probable">Вероятно</span></td><td>Несколько согласующихся косвенных источников.</td></tr>
+              <tr><td><span class="status proven">Подтверждено</span></td><td>Прямой документ или сильная совокупность независимых свидетельств.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="callout">
+        <strong>Запреты исследования:</strong> не копировать чужие деревья без проверки, не объединять людей только по фамилии, не заносить дату без источника, не исправлять старое написание имени без фиксации оригинала, не удалять противоречивые сведения.
+      </div>
+    </section>
+
+    <section id="roadmap" class="section-block">
+      <div class="section-heading">
+        <span class="eyebrow">План по поколениям</span>
+        <h2>Дорожная карта от домашнего архива к XVIII веку</h2>
+        <p>Ниже — интерактивная карточка этапов. Выберите глубину, чтобы увидеть приоритетные источники и критерий перехода дальше.</p>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Поколения">
+        <button class="tab active" type="button" data-stage="0">1–3 поколения</button>
+        <button class="tab" type="button" data-stage="1">4–5 поколения</button>
+        <button class="tab" type="button" data-stage="2">6–8 поколения</button>
+        <button class="tab" type="button" data-stage="3">8–10+ поколения</button>
+      </div>
+      <div class="stage-card" id="stageCard" aria-live="polite"></div>
+      <div class="flow-strip" aria-label="Повторяемый цикл исследования">
+        <span>Вопрос</span><span>Гипотеза</span><span>Источники</span><span>Поиск</span><span>Документ</span><span>Анализ</span><span>Вывод</span>
+      </div>
+    </section>
+
+    <section id="sources" class="section-block">
+      <div class="section-heading">
+        <span class="eyebrow">Источники</span>
+        <h2>Что искать и когда использовать</h2>
+        <p>Генеалогический поиск строится не вокруг одной базы, а вокруг набора источников по периоду, месту, конфессии и сословию.</p>
+      </div>
+      <div class="filter-row" role="search">
+        <label for="sourceFilter">Фильтр по источникам</label>
+        <input id="sourceFilter" type="search" placeholder="Например: ЗАГС, ревизия, военный, ДНК">
+      </div>
+      <div class="card-grid" id="sourceCards"></div>
+    </section>
+
+    <section id="documents" class="section-block">
+      <div class="section-heading">
+        <span class="eyebrow">Документы</span>
+        <h2>Полный цикл обработки документа</h2>
+        <p>Каждый документ нужно не только сохранить, но и описать: происхождение, архивный шифр, качество, факты, цитату, транскрипцию и связь с персоной или событием.</p>
+      </div>
+      <div class="two-col align-start">
+        <div class="process-list">
+          <h3>Цикл обработки</h3>
+          <ol>
+            <li>Получить документ и зафиксировать происхождение.</li>
+            <li>Сохранить исходную копию без изменений.</li>
+            <li>Создать рабочую копию и, при необходимости, улучшить читаемость.</li>
+            <li>Сделать дипломатическую и нормализованную транскрипцию.</li>
+            <li>Извлечь факты: даты, места, связи, роли, свидетелей.</li>
+            <li>Добавить цитату источника и оценку надёжности.</li>
+            <li>Проверить противоречия и внести вывод в журнал.</li>
+          </ol>
+        </div>
+        <div class="panel">
+          <h3>Минимальная карточка источника</h3>
+          <pre><code>Source ID: S0132
+Тип: метрическая книга
+Архив: ГАТО
+Фонд/опись/дело/лист: ф.93, оп.1, д.245, л.17об
+Дата записи: 1891-03-12
+Место: д. Ивановская, Тульская губ.
+Оригинал/копия: цифровая копия
+Файл: 1891-03-12__Сидоров_Петр...jpg
+Оценка: первичная информация о рождении</code></pre>
+        </div>
+      </div>
+      <table class="wide-table">
+        <thead><tr><th>Материал</th><th>Практика оцифровки</th><th>Комментарий</th></tr></thead>
+        <tbody>
+          <tr><td>Современный документ</td><td>300–400 ppi, PDF/A или JPEG для доступа</td><td>Мастер-копию не редактировать.</td></tr>
+          <tr><td>Старая фотография</td><td>600 ppi и выше</td><td>Сканировать лицевую и оборотную стороны.</td></tr>
+          <tr><td>Архивное дело</td><td>Обложка дела, затем каждый лист с номером</td><td>Фиксировать фонд, опись, дело, лист.</td></tr>
+          <tr><td>Интервью</td><td>WAV/BWF для мастер-файла, MP3 для обмена</td><td>Нужно согласие информанта и метаданные.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="storage" class="section-block">
+      <div class="section-heading">
+        <span class="eyebrow">Цифровой архив</span>
+        <h2>Русская структура папок и правила имён файлов</h2>
+        <p>Исходная англоязычная структура адаптирована в русские понятные названия. Номера оставлены, чтобы папки сортировались в правильном порядке.</p>
+      </div>
+      <div class="two-col align-start">
+        <div>
+          <h3>Структура демо-проекта</h3>
+          <pre class="tree"><code>Демо_исследование_родословной/
+├─ 00_Администрирование_проекта/
+├─ 01_База_данных_и_дерево/
+├─ 02_Персоны/
+├─ 03_Семьи/
+├─ 04_Населенные_пункты/
+├─ 05_Источники_по_архивам/
+├─ 06_Типы_документов/
+├─ 07_Журналы_исследования/
+├─ 08_Отчеты/
+├─ 09_ДНК_и_приватные_данные/
+└─ 10_Резервные_копии_и_контрольные_суммы/</code></pre>
+        </div>
+        <form class="file-builder" id="fileBuilder">
+          <h3>Конструктор имени файла</h3>
+          <label>Дата <input name="date" value="1891-03-12"></label>
+          <label>ФИО <input name="person" value="Сидоров Петр Иванович"></label>
+          <label>Тип документа <input name="type" value="Рождение крещение"></label>
+          <label>Место <input name="place" value="д Ивановская Тульская губ"></label>
+          <label>Архивный шифр <input name="ref" value="ГАТО Ф93 Оп1 Д245 Л17об"></label>
+          <label>Расширение <input name="ext" value="jpg"></label>
+          <output id="fileNameResult" for="date person type place ref ext"></output>
+          <button class="button button-small" type="button" id="copyFileName">Скопировать имя</button>
+        </form>
+      </div>
+      <div class="naming-rules">
+        <h3>Шаблон имени</h3>
+        <code>YYYY-MM-DD__Фамилия_Имя_Отчество__ТипДокумента__Место__Архив-Фонд-Опись-Дело-Лист__v01.ext</code>
+        <p>Если дата неизвестна, используйте <code>0000-00-00</code>. Если дата примерная, допустимо <code>c1910</code>. Исходные файлы не перезаписываются: версии идут как <code>v01</code>, <code>v02</code>, <code>transcription_v01</code>, <code>proof_v01</code>.</p>
+      </div>
+    </section>
+
+    <section id="tables" class="section-block">
+      <div class="section-heading">
+        <span class="eyebrow">Таблицы</span>
+        <h2>Рабочие журналы и шаблоны</h2>
+        <p>В демо-архив включены заполненные примерными строками таблицы: персоны, источники, семьи, журнал поиска, архивные запросы, гипотезы, противоречия, карта населённых пунктов и физический архив.</p>
+      </div>
+      <div class="table-cards">
+        <article><h3>Персоны</h3><p>ID, ФИО, даты, места, родители, супруги, конфессия, источник, статус.</p></article>
+        <article><h3>Источники</h3><p>Архив, фонд, опись, дело, лист, тип, дата, ссылка, оценка надёжности.</p></article>
+        <article><h3>Журнал поиска</h3><p>Дата, вопрос, место поиска, запрос, результат, файл, следующий шаг.</p></article>
+        <article><h3>Противоречия</h3><p>Событие, варианты, источники, анализ, решение и статус проверки.</p></article>
+      </div>
+      <div class="checklist-card">
+        <h3>Чек-лист одной родственной связи</h3>
+        <p>Отмеченные пункты сохраняются в браузере.</p>
+        <div id="proofChecklist" class="checklist"></div>
+      </div>
+    </section>
+
+    <section id="localities" class="section-block">
+      <div class="section-heading">
+        <span class="eyebrow">География</span>
+        <h2>Исследование населённого пункта</h2>
+        <p>В российской генеалогии место часто важнее фамилии: один населённый пункт мог менять губернию, уезд, волость, приход, епархию и архив хранения документов.</p>
+      </div>
+      <div class="timeline-list">
+        <article><span>1</span><div><h3>Соберите варианты названия</h3><p>Фиксируйте исторические написания, «тож», исчезнувшие деревни, современные переименования.</p></div></article>
+        <article><span>2</span><div><h3>Определите юрисдикцию</h3><p>Губерния, уезд, волость, стан, приход, епархия, современный район.</p></div></article>
+        <article><span>3</span><div><h3>Проверьте справочники и карты</h3><p>Списки населённых мест, старые карты, EtoMesto, епархиальные справочники.</p></div></article>
+        <article><span>4</span><div><h3>Найдите приход и соседние деревни</h3><p>Браки, восприемники и переселения часто происходили в радиусе 5–15 км.</p></div></article>
+        <article><span>5</span><div><h3>Составьте карту источников</h3><p>Для каждого источника запишите годы, архив, фонд, опись, дело, доступ и статус заказа.</p></div></article>
+      </div>
+    </section>
+
+    <section id="dna" class="section-block">
+      <div class="section-heading">
+        <span class="eyebrow">ДНК и этика</span>
+        <h2>ДНК — вспомогательный инструмент, а не замена документам</h2>
+        <p>ДНК помогает проверять гипотезы, искать неизвестные ветви и разделять однофамильные линии, но результат должен сопоставляться с архивными доказательствами.</p>
+      </div>
+      <div class="three-col">
+        <article class="panel"><h3>Аутосомный тест</h3><p>Ищет совпадения по большинству линий в пределах нескольких поколений. Полезен для кластеров родственников.</p></article>
+        <article class="panel"><h3>Y-ДНК</h3><p>Проверяет прямую мужскую линию отец → отец → отец и иногда фамильную гипотезу.</p></article>
+        <article class="panel"><h3>mtDNA</h3><p>Проверяет прямую женскую линию мать → мать → мать, но обычно требует осторожной интерпретации.</p></article>
+      </div>
+      <div class="callout warning"><strong>Приватность:</strong> сведения о живых людях, ДНК-данные, адреса, телефоны и чувствительные семейные факты храните отдельно и не публикуйте без согласия.</div>
+    </section>
+
+    <section id="tools" class="section-block">
+      <div class="section-heading">
+        <span class="eyebrow">Ссылки</span>
+        <h2>Полезные статьи, архивы и инструменты</h2>
+        <p>Ссылки сгруппированы по назначению. Используйте их как маршрутизаторы к первичным документам, а не как замену проверки.</p>
+      </div>
+      <div class="filter-row">
+        <label for="resourceFilter">Поиск по инструментам</label>
+        <input id="resourceFilter" type="search" placeholder="Например: архив, OCR, GEDCOM, военные">
+      </div>
+      <div class="resource-table-wrap">
+        <table class="resource-table">
+          <thead><tr><th>Ресурс</th><th>Для чего</th><th>Ссылка</th></tr></thead>
+          <tbody id="resourceRows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="errors" class="section-block">
+      <div class="section-heading">
+        <span class="eyebrow">Контроль качества</span>
+        <h2>Типичные ошибки и как их предотвращать</h2>
+        <p>Разворачивайте карточки, чтобы увидеть практическое решение.</p>
+      </div>
+      <div class="accordion" id="errorAccordion"></div>
+    </section>
+
+    <section id="download" class="section-block download-block">
+      <div>
+        <span class="eyebrow">Готовый пример</span>
+        <h2>Скачать демо-проект исследования родословной</h2>
+        <p>Внутри архива: русская структура папок, демонстрационные `.xlsx` с заголовками и строками, изображения выписок ЗАГС, метрической книги, ревизской сказки, наградного документа и семейной фотографии, шаблоны запросов, README и контрольные суммы.</p>
+        <a class="button" href="downloads/demo_proj.zip" download>Скачать downloads/demo_proj.zip</a>
+      </div>
+      <img src="assets/images/folder-structure.svg" alt="Схема папок демо-проекта" loading="lazy">
+    </section>
+
+    <footer class="site-footer">
+      <p>Материал подготовлен как учебное некоммерческое руководство по генеалогическому исследованию. Все персональные данные в демо-проекте вымышлены.</p>
+      <a href="#start">Наверх ↑</a>
+    </footer>
+  </main>
+
+  <script type="module" src="scripts/main.js"></script>
+</body>
+</html>

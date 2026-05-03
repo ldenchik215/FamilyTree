@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 500" role="img" aria-label="Структура папок">
+  <rect width="720" height="500" rx="30" fill="#fffaf0"/>
+  <g font-family="Arial, sans-serif" font-size="18" fill="#1f2933">
+    <text x="42" y="58" font-size="28" font-weight="700" fill="#70441c">Демо-проект</text>
+    <g stroke="#d5b990" stroke-width="3" fill="none">
+      <path d="M65 82v338M65 110h42M65 150h42M65 190h42M65 230h42M65 270h42M65 310h42M65 350h42M65 390h42M65 420h42"/>
+    </g>
+    <g fill="#8b5e34"><rect x="108" y="94" width="28" height="20" rx="4"/><rect x="108" y="134" width="28" height="20" rx="4"/><rect x="108" y="174" width="28" height="20" rx="4"/><rect x="108" y="214" width="28" height="20" rx="4"/><rect x="108" y="254" width="28" height="20" rx="4"/><rect x="108" y="294" width="28" height="20" rx="4"/><rect x="108" y="334" width="28" height="20" rx="4"/><rect x="108" y="374" width="28" height="20" rx="4"/><rect x="108" y="404" width="28" height="20" rx="4"/></g>
+    <text x="150" y="112">00_Администрирование_проекта</text>
+    <text x="150" y="152">01_База_данных_и_дерево</text>
+    <text x="150" y="192">02_Персоны</text>
+    <text x="150" y="232">03_Семьи</text>
+    <text x="150" y="272">04_Населенные_пункты</text>
+    <text x="150" y="312">05_Источники_по_архивам</text>
+    <text x="150" y="352">06_Типы_документов</text>
+    <text x="150" y="392">07_Журналы_исследования</text>
+    <text x="150" y="422">10_Резервные_копии</text>
+  </g>
+</svg>
