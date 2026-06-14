@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Родословная — Генеалогический поиск в России</title>
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="./index.html">📂 Родословная<span>.Поиск</span></a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="./index.html" class="active">Главная</a></li>
+                    <li><a href="./guide.html">Руководство</a></li>
+                    <li><a href="./pc_structure.html">Структура ПК</a></li>
+                    <li><a href="./templates.html">Конструктор</a></li>
+                    <li><a href="./resources.html">Ресурсы</a></li>
+                </ul>
+            </nav>
+            <button class="hamburger" aria-label="Открыть меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Premium Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Откройте историю вашей семьи</h1>
+                <p>Пошаговое руководство, шаблоны официальных запросов и советы по систематизации семейного архива для успешного генеалогического поиска в России.</p>
+                <div class="hero-actions">
+                    <a href="./guide.html" class="btn">Начать исследование</a>
+                    <a href="./templates.html" class="btn btn-secondary">Составить запрос</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Home Intro Section -->
+            <section class="home-intro">
+                <div class="intro-grid">
+                    <div class="intro-text">
+                        <h2>О проекте «Родословная»</h2>
+                        <p>Восстановление истории семьи — это увлекательное путешествие во времени. Наш проект разработан для того, чтобы помочь вам пройти этот путь шаг за шагом: от разбора старых фотографий в семейном альбоме до работы с древними ревизскими сказками в государственных архивах.</p>
+                        <p>Мы собрали воедино лучшие практики российских исследователей, подготовили автоматизированный конструктор официальных запросов в органы ЗАГС и архивы, а также разработали структуру систематизации накопленных сканов на вашем компьютере.</p>
+                    </div>
+                    <div class="intro-highlights">
+                        <div class="highlight-card">
+                            <h3>📜 База знаний</h3>
+                            <p>Подробный гид по всем этапам поиска: ЗАГС, региональные архивы, военные архивы ЦАМО.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h3>📁 Систематизация</h3>
+                            <p>Готовая структура каталогов для хранения документов на ПК с четкими правилами именования файлов.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h3>✏️ Конструктор</h3>
+                            <p>Генерация запросов в ЗАГС и архивы по шаблонам с экспортом в форматы PDF и Word (DOCX).</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h3>🌐 Справочник ресурсов</h3>
+                            <p>Каталог полезных баз данных (Память народа, gwar.mil.ru) и контактов крупнейших архивов.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Logic & Status Scale Section -->
+            <section style="margin-top: 50px; margin-bottom: 50px;">
+                <h2 style="border-bottom: 2px solid var(--border-color); padding-bottom: 10px; margin-bottom: 20px;">Логика исследования и уровни доказанности</h2>
+                <p style="margin-bottom: 30px;">Полноценное исследование — это не просто заполненное семейное дерево. В научной генеалогии крайне важно зафиксировать доказательную базу, журнал поиска, список гипотез и таблицу противоречий. Движение идет строго от известного к неизвестному.</p>
+                <div class="intro-grid" style="align-items: start; gap: 30px;">
+                    <div>
+                        <h3>Правила ведения поиска</h3>
+                        <ol class="steps" style="list-style: none; padding: 0; display: grid; gap: 15px; margin-top: 15px;">
+                            <li style="display: flex; gap: 15px; align-items: flex-start; padding: 15px; border-radius: 8px; background-color: var(--bg-white); border: 1px solid var(--border-color);">
+                                <span style="background-color: var(--primary-green); color: var(--bg-white); width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; flex-shrink: 0;">1</span>
+                                <p style="margin: 0; font-size: 0.9rem;">Зафиксировать и оцифровать домашний архив (себя, родителей, бабушек).</p>
+                            </li>
+                            <li style="display: flex; gap: 15px; align-items: flex-start; padding: 15px; border-radius: 8px; background-color: var(--bg-white); border: 1px solid var(--border-color);">
+                                <span style="background-color: var(--primary-green); color: var(--bg-white); width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; flex-shrink: 0;">2</span>
+                                <p style="margin: 0; font-size: 0.9rem;">Подтвердить каждую связь «ребенок → родители» официальным документом.</p>
+                            </li>
+                            <li style="display: flex; gap: 15px; align-items: flex-start; padding: 15px; border-radius: 8px; background-color: var(--bg-white); border: 1px solid var(--border-color);">
+                                <span style="background-color: var(--primary-green); color: var(--bg-white); width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; flex-shrink: 0;">3</span>
+                                <p style="margin: 0; font-size: 0.9rem;">Определить точные исторические границы населенного пункта предков.</p>
+                            </li>
+                            <li style="display: flex; gap: 15px; align-items: flex-start; padding: 15px; border-radius: 8px; background-color: var(--bg-white); border: 1px solid var(--border-color);">
+                                <span style="background-color: var(--primary-green); color: var(--bg-white); width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; flex-shrink: 0;">4</span>
+                                <p style="margin: 0; font-size: 0.9rem;">Собрать архивные дела по приходу: метрики, ревизские сказки, исповедки.</p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div style="background-color: var(--bg-white); padding: 25px; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: var(--shadow-light); width: 100%;">
+                        <h3>Шкала статусов родства</h3>
+                        <table style="width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 0.85rem;">
+                            <thead>
+                                <tr style="border-bottom: 2px solid var(--border-color); text-align: left;">
+                                    <th style="padding: 10px 5px; font-weight: 700;">Статус</th>
+                                    <th style="padding: 10px 5px; font-weight: 700;">Рекомендация по использованию</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom: 1px solid var(--border-color);">
+                                    <td style="padding: 10px 5px;"><span class="status legend">Предание</span></td>
+                                    <td style="padding: 10px 5px;">Семейный рассказ без документов. Полезно для гипотез, но не факт.</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--border-color);">
+                                    <td style="padding: 10px 5px;"><span class="status hypothesis">Гипотеза</span></td>
+                                    <td style="padding: 10px 5px;">Логичная версия с ограниченной или косвенной базой источников.</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--border-color);">
+                                    <td style="padding: 10px 5px;"><span class="status probable">Вероятно</span></td>
+                                    <td style="padding: 10px 5px;">Версия подтверждается несколькими косвенными документами.</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--border-color);">
+                                    <td style="padding: 10px 5px;"><span class="status proven">Подтверждено</span></td>
+                                    <td style="padding: 10px 5px;">Связь доказана прямым документом (записью о рождении и т.д.).</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="callout warning" style="margin-top: 25px;">
+                    <strong>Строго запрещено:</strong> копировать чужие онлайн-деревья без личной архивной проверки, объединять персон только на основании совпадения фамилии, искажать оригинальное написание имен и дат, удалять противоречивые архивные сведения.
+                </div>
+            </section>
+
+            <!-- Generation-Based Roadmap Section -->
+            <section style="margin-top: 50px; margin-bottom: 50px;">
+                <h2 style="border-bottom: 2px solid var(--border-color); padding-bottom: 10px; margin-bottom: 20px;">Интерактивная дорожная карта по поколениям</h2>
+                <p style="margin-bottom: 25px;">Выберите нужную глубину исследования, чтобы узнать цели поиска, ключевые источники информации и критерий перехода на следующий исторический этап.</p>
+                
+                <div class="tabs">
+                    <button class="tab active" type="button" data-stage="0">1–3 поколения</button>
+                    <button class="tab" type="button" data-stage="1">4–5 поколения</button>
+                    <button class="tab" type="button" data-stage="2">6–8 поколения</button>
+                    <button class="tab" type="button" data-stage="3">8–10+ поколения</button>
+                </div>
+                
+                <div class="stage-card" id="stageCard" aria-live="polite">
+                    <!-- Dynamic content will be injected here -->
+                </div>
+                
+                <div class="flow-strip" aria-label="Повторяемый цикл поиска">
+                    <span>Задайте вопрос</span>
+                    <span>Сформулируйте гипотезу</span>
+                    <span>Определите источники</span>
+                    <span>Проведите поиск</span>
+                    <span>Извлеките документ</span>
+                    <span>Проанализируйте</span>
+                    <span>Сделайте вывод</span>
+                </div>
+            </section>
+
+            <!-- Interactive Sources Cards Section -->
+            <section style="margin-top: 50px; margin-bottom: 50px;">
+                <h2 style="border-bottom: 2px solid var(--border-color); padding-bottom: 10px; margin-bottom: 20px;">Что искать: справочник источников по периодам</h2>
+                <p style="margin-bottom: 25px;">Генеалогическое исследование опирается на различные исторические документы в зависимости от эпохи, сословия и географии предков. Воспользуйтесь поисковым фильтром ниже.</p>
+                
+                <div class="filter-row">
+                    <label for="sourceFilter">Поиск по источникам:</label>
+                    <input id="sourceFilter" type="search" placeholder="Например: ЗАГС, метрика, ревизия, ДНК, военные...">
+                </div>
+                
+                <div class="card-grid" id="sourceCards">
+                    <!-- Dynamic cards will be injected here -->
+                </div>
+            </section>
+
+            <!-- DNA and Privacy Section -->
+            <section style="margin-top: 50px; margin-bottom: 50px;">
+                <h2 style="border-bottom: 2px solid var(--border-color); padding-bottom: 10px; margin-bottom: 20px;">ДНК-генеалогия и этика исследования</h2>
+                <p style="margin-bottom: 25px;">Генетические тесты — это современный вспомогательный инструмент, который дополняет, но не заменяет традиционный поиск по бумажным архивным документам.</p>
+                
+                <div class="intro-highlights" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); display: grid; gap: 20px;">
+                    <div class="highlight-card" style="background-color: var(--bg-white); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; box-shadow: var(--shadow-light);">
+                        <h3 style="font-size: 1.1rem; color: var(--primary-green); margin-bottom: 8px;">🧬 Аутосомный тест (Family Finder)</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-dark); margin: 0;">Анализирует все линии предков. Находит близких и дальних родственников в пределах 5–7 поколений. Позволяет группировать совпаденцев по ветвям.</p>
+                    </div>
+                    <div class="highlight-card" style="background-color: var(--bg-white); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; box-shadow: var(--shadow-light);">
+                        <h3 style="font-size: 1.1rem; color: var(--primary-green); margin-bottom: 8px;">🧬 Y-ДНК тест (Прямая мужская линия)</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-dark); margin: 0;">Исследует Y-хромосому, передающуюся строго от отца к сыну. Помогает подтвердить или опровергнуть фамильные легенды и найти общего предка по мужской линии.</p>
+                    </div>
+                    <div class="highlight-card" style="background-color: var(--bg-white); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; box-shadow: var(--shadow-light);">
+                        <h3 style="font-size: 1.1rem; color: var(--primary-green); margin-bottom: 8px;">🧬 mtДНК тест (Прямая женская линия)</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-dark); margin: 0;">Исследует митохондриальную ДНК, передающуюся от матери к детям. Помогает подтвердить родство по прямой материнской линии предков.</p>
+                    </div>
+                </div>
+                
+                <div class="callout warning" style="margin-top: 25px;">
+                    <strong>Этика и конфиденциальность:</strong> Персональные и генетические данные живых людей (включая адреса, ДНК-профили и семейные тайны) строго конфиденциальны. Не публикуйте их в открытых генеалогических базах без письменного согласия родственников.
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h3>📂 Родословная<span>.Поиск</span></h3>
+                <p>Методические материалы и инструменты для самостоятельного восстановления истории своей семьи в российских архивах.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Разделы сайта</h4>
+                <ul>
+                    <li><a href="./index.html">Главная</a></li>
+                    <li><a href="./guide.html">Пошаговое руководство</a></li>
+                    <li><a href="./pc_structure.html">Организация на ПК</a></li>
+                    <li><a href="./templates.html">Конструктор запросов</a></li>
+                    <li><a href="./resources.html">Полезные ресурсы</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Правовая информация</h4>
+                <p>Все шаблоны соответствуют Федеральному закону № 143-ФЗ «Об актах гражданского состояния» и регламентам Минюста РФ.</p>
+                <p>Сайт работает автономно и не передает вводимые вами данные на сторонние серверы.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Проект «Родословная». Все права защищены.</p>
+            <p>Stage 2 — Static Website Implementation</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./js/data.js"></script>
+    <script src="./js/interactions.js"></script>
+    <script src="./js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.FTInteractions) {
+                window.FTInteractions.initStages();
+                window.FTInteractions.initSources();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конструктор запросов — Родословная</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    
+    <!-- External libraries for exports via CDNs with local fallbacks for offline usage -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" referrerpolicy="no-referrer"></script>
+    <script>window.html2pdf || document.write('<script src="./js/html2pdf.bundle.min.js"><\/script>')</script>
+
+    <script src="https://unpkg.com/docx@8.2.4/build/index.umd.js"></script>
+    <script>window.docx || document.write('<script src="./js/docx.js"><\/script>')</script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js" referrerpolicy="no-referrer"></script>
+    <script>window.saveAs || document.write('<script src="./js/FileSaver.min.js"><\/script>')</script>
+
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="./index.html">📂 Родословная<span>.Поиск</span></a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="./index.html">Главная</a></li>
+                    <li><a href="./guide.html">Руководство</a></li>
+                    <li><a href="./pc_structure.html">Структура ПК</a></li>
+                    <li><a href="./templates.html" class="active">Конструктор</a></li>
+                    <li><a href="./resources.html">Ресурсы</a></li>
+                </ul>
+            </nav>
+            <button class="hamburger" aria-label="Открыть меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <h1>Интерактивный конструктор запросов</h1>
+        <p class="page-desc">Выберите подходящий шаблон, заполните динамическую форму слева, и в режиме реального времени наблюдайте за генерацией официального документа. Готовый запрос можно скопировать или скачать в форматах PDF и Word.</p>
+
+        <!-- Template Selector Catalogue -->
+        <section>
+            <h3>1. Каталог шаблонов запросов</h3>
+            <div class="template-grid">
+                
+                <!-- Template 1 -->
+                <div class="template-selector-card active" data-id="1">
+                    <div>
+                        <h4>Запрос в ЗАГС (Справка с иными сведениями)</h4>
+                        <p>Для поиска записей о рождении/браке/смерти за последние 100 лет (с 1926 года). Позволяет запросить ценные архивные отметки.</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn btn-sm btn-copy-template">📋 Скопировать шаблон</button>
+                    </div>
+                </div>
+
+                <!-- Template 2 -->
+                <div class="template-selector-card" data-id="2">
+                    <div>
+                        <h4>Поиск рождения в метрических книгах</h4>
+                        <p>Запрос в региональные государственные архивы для нахождения записей о рождении/крещении до 1917–1920 годов.</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn btn-sm btn-copy-template">📋 Скопировать шаблон</button>
+                    </div>
+                </div>
+
+                <!-- Template 3 -->
+                <div class="template-selector-card" data-id="3">
+                    <div>
+                        <h4>Запрос в ЦАМО (Поиск военнослужащего)</h4>
+                        <p>Запрос в Центральный архив Минобороны о судьбе, званиях, наградах и ранениях участников Великой Отечественной войны.</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn btn-sm btn-copy-template">📋 Скопировать шаблон</button>
+                    </div>
+                </div>
+
+                <!-- Template 4 -->
+                <div class="template-selector-card" data-id="4">
+                    <div>
+                        <h4>Поиск семьи по ревизским сказкам</h4>
+                        <p>Общий генеалогический запрос в региональный архив для выявления состава семей предков до 1858 года (ревизии 6–10).</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn btn-sm btn-copy-template">📋 Скопировать шаблон</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Constructor Split Workspace -->
+        <section class="constructor-section">
+            <h3>2. Конструктор и предварительный просмотр</h3>
+            
+            <div class="constructor-layout">
+                <!-- Left Column: Form Fields -->
+                <div class="form-card">
+                    <form id="generator-form" onsubmit="event.preventDefault();">
+                        <div id="form-fields-container">
+                            <!-- Fields will be dynamically injected here by templates.js -->
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Right Column: Live Paper Preview -->
+                <div class="preview-card">
+                    <div class="preview-actions">
+                        <button id="copy-preview-btn" class="btn btn-sm">📋 Копировать текст</button>
+                        <button id="download-pdf-btn" class="btn btn-sm">📄 Скачать PDF</button>
+                        <button id="download-docx-btn" class="btn btn-sm">📝 Скачать DOCX (Word)</button>
+                    </div>
+                    <div class="preview-sheet-outer">
+                        <div id="document-preview" class="preview-sheet">
+                            <!-- Live text preview will update here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h3>📂 Родословная<span>.Поиск</span></h3>
+                <p>Методические материалы и инструменты для самостоятельного восстановления истории своей семьи в российских архивах.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Разделы сайта</h4>
+                <ul>
+                    <li><a href="./index.html">Главная</a></li>
+                    <li><a href="./guide.html">Пошаговое руководство</a></li>
+                    <li><a href="./pc_structure.html">Организация на ПК</a></li>
+                    <li><a href="./templates.html">Конструктор запросов</a></li>
+                    <li><a href="./resources.html">Полезные ресурсы</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Правовая информация</h4>
+                <p>Все шаблоны соответствуют Федеральному закону № 143-ФЗ «Об актах гражданского состояния» и регламентам Минюста РФ.</p>
+                <p>Сайт работает автономно и не передает вводимые вами данные на сторонние серверы.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Проект «Родословная». Все права защищены.</p>
+            <p>Stage 2 — Static Website Implementation</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./js/main.js"></script>
+    <script src="./js/templates.js"></script>
+</body>
+</html>

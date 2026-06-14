@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Организация на ПК — Родословная</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="./index.html">📂 Родословная<span>.Поиск</span></a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="./index.html">Главная</a></li>
+                    <li><a href="./guide.html">Руководство</a></li>
+                    <li><a href="./pc_structure.html" class="active">Структура ПК</a></li>
+                    <li><a href="./templates.html">Конструктор</a></li>
+                    <li><a href="./resources.html">Ресурсы</a></li>
+                </ul>
+            </nav>
+            <button class="hamburger" aria-label="Открыть меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <h1>Систематизация генеалогических файлов на ПК</h1>
+        <p class="page-desc">Правильная организация каталогов и файлов экономит сотни часов поиска. Ниже представлена интерактивная структура папок для вашего компьютера и стандарты именования файлов.</p>
+
+        <div class="structure-grid">
+            <!-- Left Side: Interactive Tree -->
+            <div class="tree-card">
+                <h3>Интерактивная структура каталогов</h3>
+                <div style="margin-bottom: 20px; display: flex; gap: 10px;">
+                    <button id="expand-all" class="btn btn-sm">Развернуть всё</button>
+                    <button id="collapse-all" class="btn btn-sm btn-secondary" style="color: var(--primary-green); border-color: var(--primary-green);">Свернуть всё</button>
+                </div>
+
+                <div class="tabs" style="margin-bottom: 20px;">
+                    <button class="tab active" type="button" id="tab-branch-centric">Поветвевая структура</button>
+                    <button class="tab" type="button" id="tab-archive-centric">Архивно-тематическая</button>
+                </div>
+
+                <div id="tree-branch-centric" class="tree-container">
+                    <ul class="folder-tree">
+                        <li>
+                            <div id="root-folder-node" class="tree-node">
+                                <span class="tree-node-icon">📂</span> FamilyTree_Project/
+                                <span class="tree-node-desc">(Корневая папка исследования)</span>
+                            </div>
+                            <ul id="root-folder-list" class="open">
+                                <li>
+                                    <div class="tree-node empty">
+                                        <span class="tree-node-icon">📄</span> README.txt
+                                        <span class="tree-node-desc">(Инструкция по ведению архива)</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="tree-node empty">
+                                        <span class="tree-node-icon">📄</span> FamilyTree.ged
+                                        <span class="tree-node-desc">(Файл базы данных GEDCOM для импорта/экспорта)</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="tree-node">
+                                        <span class="tree-node-icon">📁</span> 01_FamilyBranches/
+                                        <span class="tree-node-desc">(Фамильные ветви)</span>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <div class="tree-node">
+                                                <span class="tree-node-icon">📁</span> [Иванов_Отцовская_Ветвь]/
+                                            </div>
+                                            <ul>
+                                                <li>
+                                                    <div class="tree-node">
+                                                        <span class="tree-node-icon">📁</span> 01_DirectLine/
+                                                        <span class="tree-node-desc">(Прямая линия предков)</span>
+                                                    </div>
+                                                    <ul>
+                                                        <li>
+                                                            <div class="tree-node">
+                                                                <span class="tree-node-icon">📁</span> Gen1_Иванов_Иван_1945/
+                                                                <span class="tree-node-desc">(Карточка предка 1-го поколения)</span>
+                                                            </div>
+                                                            <ul>
+                                                                <li><div class="tree-node empty"><span class="tree-node-icon">📁</span> Documents/ <span class="tree-node-desc">(Паспорта, свидетельства)</span></div></li>
+                                                                <li><div class="tree-node empty"><span class="tree-node-icon">📁</span> Photos/ <span class="tree-node-desc">(Фотографии)</span></div></li>
+                                                                <li><div class="tree-node empty"><span class="tree-node-icon">📁</span> Transcripts/ <span class="tree-node-desc">(Текстовые выписки, справки)</span></div></li>
+                                                                <li><div class="tree-node empty"><span class="tree-node-icon">📁</span> SourceFiles/ <span class="tree-node-desc">(Метрические выписи, сканы МК/РС)</span></div></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <div class="tree-node">
+                                                                <span class="tree-node-icon">📁</span> Gen2_Иванов_Петр_1915/
+                                                            </div>
+                                                            <ul>
+                                                                <li><div class="tree-node empty"><span class="tree-node-icon">📁</span> Documents/</div></li>
+                                                                <li><div class="tree-node empty"><span class="tree-node-icon">📁</span> Photos/</div></li>
+                                                                <li><div class="tree-node empty"><span class="tree-node-icon">📁</span> Transcripts/</div></li>
+                                                                <li><div class="tree-node empty"><span class="tree-node-icon">📁</span> SourceFiles/</div></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <div class="tree-node empty">
+                                                        <span class="tree-node-icon">📁</span> 02_LateralLines/
+                                                        <span class="tree-node-desc">(Боковые ветви: дяди, тети, сестры)</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <div class="tree-node">
+                                                <span class="tree-node-icon">📁</span> [Смирнова_Материнская_Ветвь]/
+                                            </div>
+                                            <ul>
+                                                <li><div class="tree-node empty"><span class="tree-node-icon">📁</span> 01_DirectLine/</div></li>
+                                                <li><div class="tree-node empty"><span class="tree-node-icon">📁</span> 02_LateralLines/</div></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="tree-node">
+                                        <span class="tree-node-icon">📁</span> 02_Interviews/
+                                        <span class="tree-node-desc">(Аудиозаписи и расшифровки интервью)</span>
+                                    </div>
+                                    <ul>
+                                        <li><div class="tree-node empty"><span class="tree-node-icon">📁</span> 20260415_Иванов_Михаил_Audio/</div></li>
+                                        <li><div class="tree-node empty"><span class="tree-node-icon">📄</span> 20260415_Иванов_Михаил_Transcript.txt</div></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="tree-node">
+                                        <span class="tree-node-icon">📁</span> 03_ArchiveQueries/
+                                        <span class="tree-node-desc">(Запросы и официальные ответы)</span>
+                                    </div>
+                                    <ul>
+                                        <li><div class="tree-node empty"><span class="tree-node-icon">📁</span> 01_ZAGS/</div></li>
+                                        <li><div class="tree-node empty"><span class="tree-node-icon">📁</span> 02_StateArchives/</div></li>
+                                        <li><div class="tree-node empty"><span class="tree-node-icon">📁</span> 03_MilitaryArchives/</div></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="tree-node">
+                                        <span class="tree-node-icon">📁</span> 04_GenealogyReports/
+                                        <span class="tree-node-desc">(Поколенные росписи, графические древа)</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="tree-node empty">
+                                        <span class="tree-node-icon">📁</span> 05_References/
+                                        <span class="tree-node-desc">(Полезные книги, географические справочники)</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="tree-archive-centric" class="tree-container" style="display: none;">
+                    <ul class="folder-tree">
+                        <li>
+                            <div class="tree-node">
+                                <span class="tree-node-icon">📂</span> FamilyTree_Archive/
+                                <span class="tree-node-desc">(Корневая папка архива)</span>
+                            </div>
+                            <ul class="open">
+                                <li>
+                                    <div class="tree-node">
+                                        <span class="tree-node-icon">📁</span> 00_Администрирование_проекта/
+                                        <span class="tree-node-desc">(Дневники поиска, задачи, переписка)</span>
+                                    </div>
+                                    <ul>
+                                        <li><div class="tree-node empty"><span class="tree-node-icon">📄</span> Исследовательский_журнал.xlsx</div></li>
+                                        <li><div class="tree-node empty"><span class="tree-node-icon">📄</span> План_поиска.docx</div></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="tree-node">
+                                        <span class="tree-node-icon">📁</span> 01_База_данных_и_дерево/
+                                        <span class="tree-node-desc">(Файлы GEDCOM, файлы программ древа)</span>
+                                    </div>
+                                    <ul>
+                                        <li><div class="tree-node empty"><span class="tree-node-icon">📄</span> Родословное_древо.ged</div></li>
+                                        <li><div class="tree-node empty"><span class="tree-node-icon">📄</span> Древо_проект.gramps</div></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="tree-node">
+                                        <span class="tree-node-icon">📁</span> 02_Персоны/
+                                        <span class="tree-node-desc">(Папки по ключевым персонам)</span>
+                                    </div>
+                                    <ul>
+                                        <li><div class="tree-node empty"><span class="tree-node-icon">📁</span> Иванов_Иван_Васильевич_1912/</div></li>
+                                        <li><div class="tree-node empty"><span class="tree-node-icon">📁</span> Смирнова_Анна_Петровна_1915/</div></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="tree-node">
+                                        <span class="tree-node-icon">📁</span> 03_Семьи/
+                                        <span class="tree-node-desc">(Карточки семейных ячеек)</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="tree-node">
+                                        <span class="tree-node-icon">📁</span> 04_Населенные_пункты/
+                                        <span class="tree-node-desc">(История сел, приходов, списки жителей)</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="tree-node">
+                                        <span class="tree-node-icon">📁</span> 05_Источники_по_архивам/
+                                        <span class="tree-node-desc">(Документы, сгруппированные по архивам)</span>
+                                    </div>
+                                    <ul>
+                                        <li><div class="tree-node empty"><span class="tree-node-icon">📁</span> ГА_Тульской_области_ГАТО/</div></li>
+                                        <li><div class="tree-node empty"><span class="tree-node-icon">📁</span> ЦА_Минобороны_ЦАМО/</div></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="tree-node">
+                                        <span class="tree-node-icon">📁</span> 06_Типы_документов/
+                                        <span class="tree-node-desc">(Справки ЗАГС, Метрики, Ревизии)</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="tree-node">
+                                        <span class="tree-node-icon">📁</span> 07_Журналы_исследования/
+                                        <span class="tree-node-desc">(Поисковые выписки из архивов)</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="tree-node">
+                                        <span class="tree-node-icon">📁</span> 08_Отчеты/
+                                        <span class="tree-node-desc">(Итоговые поколенные росписи и статьи)</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="tree-node">
+                                        <span class="tree-node-icon">📁</span> 09_ДНК_и_приватные_данные/
+                                        <span class="tree-node-desc">(Сведения о совпаденцах, сырые ДНК-файлы)</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="tree-node">
+                                        <span class="tree-node-icon">📁</span> 10_Резервные_копии_и_контрольные_суммы/
+                                        <span class="tree-node-desc">(Резервные копии, CRC/SHA-256 файлы)</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Right Side: Rules & ZIP Download -->
+            <div class="naming-card">
+                <div class="naming-rules">
+                    <h3>Правила именования файлов</h3>
+                    <p>Каждый файл (скан, фото, справка) должен быть назван строго по единому стандарту:</p>
+                    <div class="code-snippet">
+                        ГГГГММДД_<span>[Фамилия]</span>_<span>[Имя]</span>_<span>[ТипДокумента]</span>_<span>[Описание]</span>.расширение
+                    </div>
+                    
+                    <h4>Ключевые рекомендации:</h4>
+                    <ul>
+                        <li><strong>Принцип сортировки:</strong> Дата в начале названия (в формате YYYYMMDD) гарантирует, что при обычной сортировке по имени все документы выстроятся строго в хронологическом порядке.</li>
+                        <li><strong>Неполные даты:</strong> Если точный день или месяц неизвестен, заменяйте их нулями (<code>00</code>). Например, если документ датирован только 1915 годом, в начале имени пишите: <code>19150000_...</code></li>
+                        <li><strong>Примерные даты:</strong> Если дата известна лишь приблизительно (например, 1910-е годы), допускается использовать символ "X" в конце года: <code>191X0000_...</code></li>
+                        <li><strong>Неизвестные имена/фамилии:</strong> Если имя предка или дата события неизвестны, в названии папки или в карточке пишите слово <strong>«Неизвестно»</strong> (например, <code>Gen3_Иванов_Неизвестно_1880</code>).</li>
+                    </ul>
+                </div>
+
+                <form class="file-builder" id="fileBuilder" style="margin-top: 25px; margin-bottom: 25px;">
+                    <h3>Конструктор имени файла</h3>
+                    <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 10px;">Вводите данные в поля, и система автоматически сгенерирует стандартизированное имя файла для вашего архива.</p>
+                    <label>Дата события (ГГГГ-ММ-ДД)<input type="text" name="date" value="1891-03-12" placeholder="Например: 1891-03-12 или 1915-00-00"></label>
+                    <label>ФИО персоны <input type="text" name="person" value="Иванов Петр Васильевич" placeholder="Например: Иванов_Петр_Васильевич"></label>
+                    <label>Тип документа <input type="text" name="type" value="Метрика Рождение" placeholder="Например: ЗаписьОРождении"></label>
+                    <label>Место события <input type="text" name="place" value="д Ивановская Тульская губ" placeholder="Например: д_Ивановская"></label>
+                    <label>Архивный шифр <input type="text" name="ref" value="ГАТО Ф93 Оп1 Д245 Л17об" placeholder="Например: ГА РФ Ф102 Оп1 Д12 Л5"></label>
+                    <label>Расширение файла <input type="text" name="ext" value="jpg" placeholder="jpg, pdf, tiff"></label>
+                    <label style="margin-top: 10px;">Результат именования:
+                        <output id="fileNameResult" for="date person type place ref ext"></output>
+                    </label>
+                    <button class="btn btn-sm" type="button" id="copyFileName" style="margin-top: 10px; width: 100%;">📋 Скопировать имя файла</button>
+                </form>
+
+                <div class="download-box">
+                    <h4>Загрузить демо-структуру архива</h4>
+                    <p>Скачайте готовый архив, который содержит <strong>две версии проекта</strong>: полностью заполненный демонстрационный проект с примерами реальных документов (PDF-выписки, Excel-журналы, DOCX-запросы, исторические фото) и чистый шаблон, снабженный подробными инструкциями README.txt в каждой папке.</p>
+                    <a href="./FamilyTree_DemoStructure.zip" class="btn" download>📥 Скачать DemoStructure.zip</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Comparison of Folder Structures -->
+        <section class="comparison-section" style="margin-top: 50px; margin-bottom: 50px; background-color: var(--bg-white); padding: 40px; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: var(--shadow-medium);">
+            <h2 style="border-bottom: 2px solid var(--border-color); padding-bottom: 10px; margin-bottom: 20px;">Сравнение структур хранения данных</h2>
+            <p style="margin-bottom: 30px;">Каждая из предложенных структур организации генеалогического архива на компьютере имеет свои преимущества и недостатки. Выбор зависит от масштаба вашего исследования и личных предпочтений в систематизации.</p>
+            
+            <div class="intro-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); display: grid; gap: 30px; align-items: start;">
+                <div style="background-color: var(--bg-cream); padding: 25px; border-radius: 8px; border-top: 4px solid var(--primary-green);">
+                    <h3 style="color: var(--primary-green-dark); margin-bottom: 15px; font-size: 1.25rem;">📁 Поветвевая (бранч-ориентированная) структура</h3>
+                    <p style="font-size: 0.9rem; margin-bottom: 15px; color: var(--text-dark);">Организует файлы по ветвям рода (например, по фамилиям отцовской и материнской линий), группируя документы внутри папок конкретных предков по поколениям.</p>
+                    <h4 style="font-size: 0.85rem; text-transform: uppercase; color: var(--accent-gold); margin-bottom: 8px;">Плюсы:</h4>
+                    <ul style="padding-left: 20px; font-size: 0.85rem; margin-bottom: 15px; display: grid; gap: 6px; color: var(--text-dark);">
+                        <li><strong>Наглядность родства:</strong> Сразу видно, к какой именно семейной ветке и какому поколению относится документ.</li>
+                        <li><strong>Фокус на человеке:</strong> Все материалы по конкретному предку (фото, паспорт, выписки) собраны в одной его персональной папке.</li>
+                        <li><strong>Простота для новичков:</strong> Идеально подходит на старте поиска, когда объем документов невелик и исследуется прямая линия.</li>
+                    </ul>
+                    <h4 style="font-size: 0.85rem; text-transform: uppercase; color: #a7433c; margin-bottom: 8px;">Минусы:</h4>
+                    <ul style="padding-left: 20px; font-size: 0.85rem; display: grid; gap: 6px; color: var(--text-dark);">
+                        <li><strong>Сложность при дублировании:</strong> Один архивный скан (например, метрика о рождении брата и сестры) относится к двум персонам. Приходится делать дубли или ярлыки.</li>
+                        <li><strong>Дробность архива:</strong> Сложно работать с общими архивными делами, которые содержат сведения о десятках родственников из одного села.</li>
+                    </ul>
+                </div>
+                
+                <div style="background-color: var(--bg-cream); padding: 25px; border-radius: 8px; border-top: 4px solid var(--accent-gold);">
+                    <h3 style="color: var(--primary-green-dark); margin-bottom: 15px; font-size: 1.25rem;">📂 Архивно-тематическая структура</h3>
+                    <p style="font-size: 0.9rem; margin-bottom: 15px; color: var(--text-dark);">Ориентирована на типы источников и происхождение документов. Файлы группируются по архивам (ГАРФ, РГАДА, ЦАМО), делам или типам документов (метрики, ревизии, ЗАГС).</p>
+                    <h4 style="font-size: 0.85rem; text-transform: uppercase; color: var(--accent-gold); margin-bottom: 8px;">Плюсы:</h4>
+                    <ul style="padding-left: 20px; font-size: 0.85rem; margin-bottom: 15px; display: grid; gap: 6px; color: var(--text-dark);">
+                        <li><strong>Целостность источников:</strong> Один скан дела лежит в одном месте без дублирования. Связи строятся через базу данных (GEDCOM).</li>
+                        <li><strong>Удобство для профессионалов:</strong> Легко вести масштабный поиск по целым селам, волостям или сословиям.</li>
+                        <li><strong>Эффективность работы:</strong> Исключает хаос при обработке гигантских объемов выписок и копий дел из разных госархивов.</li>
+                    </ul>
+                    <h4 style="font-size: 0.85rem; text-transform: uppercase; color: #a7433c; margin-bottom: 8px;">Минусы:</h4>
+                    <ul style="padding-left: 20px; font-size: 0.85rem; display: grid; gap: 6px; color: var(--text-dark);">
+                        <li><strong>Зависимость от ПО:</strong> Требует обязательного использования генеалогических программ (Gramps, Древо Жизни) для визуализации связей.</li>
+                        <li><strong>Абстрактность:</strong> Нельзя просто открыть папку человека и увидеть все его документы в одном месте.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="callout" style="margin-top: 30px;">
+                <strong>Рекомендация по выбору:</strong> Если вы только начинаете поиск и у вас до 50-100 документов, используйте <strong>Поветвевую структуру</strong>. Она понятна интуитивно. Если ваше исследование разрослось, вы работаете со многими архивами напрямую и ведете поиск боковых линий — переходите на <strong>Архивно-тематическую структуру</strong>.
+            </div>
+        </section>
+
+        <!-- Before / After comparison table -->
+        <section class="table-section">
+            <h3>Сравнение названий файлов</h3>
+            <p>Ниже приведены практические примеры того, как беспорядочные имена оцифрованных копий приводятся к профессиональному стандарту генеалогического архива.</p>
+            
+            <div class="table-responsive">
+                <table class="naming-table">
+                    <thead>
+                        <tr>
+                            <th>Исходное название файла (Хаос)</th>
+                            <th>Стандартизированное название (Порядок)</th>
+                            <th>Пояснение</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="badge-bad">дедушка.jpg</span></td>
+                            <td><span class="badge-good">19150512_Иванов_Петр_Фото_Портрет.jpg</span></td>
+                            <td>Четко определены дата съемки, фамилия, имя субъекта и тип контента.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge-bad">свидет о рождении мамы.pdf</span></td>
+                            <td><span class="badge-good">19451015_Иванова_Мария_СвидетельствоОРождении_ЗАГС.pdf</span></td>
+                            <td>Определены дата рождения мамы, фамилия по рождению, тип документа и орган выдачи.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge-bad">военный архив деда.jpg</span></td>
+                            <td><span class="badge-good">19430000_Иванов_Петр_Справка_ЦАМО.jpg</span></td>
+                            <td>Применено правило двух нулей <code>00</code> для неизвестного дня и месяца в дате документа.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge-bad">метрика 1895.pdf</span></td>
+                            <td><span class="badge-good">18950524_Иванов_Семен_ЗаписьОРождении_МетрическаяКнига.pdf</span></td>
+                            <td>Указана точная дата крещения/рождения, имя ребенка и тип источника информации.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge-bad">карта деревни.png</span></td>
+                            <td><span class="badge-good">19120000_Косулино_КартаВолости_Справочник.png</span></td>
+                            <td>Справочные географические материалы датируются годом выпуска справочника или карты.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h3>📂 Родословная<span>.Поиск</span></h3>
+                <p>Методические материалы и инструменты для самостоятельного восстановления истории своей семьи в российских архивах.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Разделы сайта</h4>
+                <ul>
+                    <li><a href="./index.html">Главная</a></li>
+                    <li><a href="./guide.html">Пошаговое руководство</a></li>
+                    <li><a href="./pc_structure.html">Организация на ПК</a></li>
+                    <li><a href="./templates.html">Конструктор запросов</a></li>
+                    <li><a href="./resources.html">Полезные ресурсы</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Правовая информация</h4>
+                <p>Все шаблоны соответствуют Федеральному закону № 143-ФЗ «Об актах гражданского состояния» и регламентам Минюста РФ.</p>
+                <p>Сайт работает автономно и не передает вводимые вами данные на сторонние серверы.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Проект «Родословная». Все права защищены.</p>
+            <p>Stage 2 — Static Website Implementation</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./js/data.js"></script>
+    <script src="./js/interactions.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/pc_structure.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.FTInteractions) {
+                window.FTInteractions.initFileBuilder();
+            }
+            
+            // Tab switching logic for folder structures
+            const tabBranch = document.getElementById('tab-branch-centric');
+            const tabArchive = document.getElementById('tab-archive-centric');
+            const treeBranch = document.getElementById('tree-branch-centric');
+            const treeArchive = document.getElementById('tree-archive-centric');
+            
+            if (tabBranch && tabArchive && treeBranch && treeArchive) {
+                tabBranch.addEventListener('click', () => {
+                    tabBranch.classList.add('active');
+                    tabArchive.classList.remove('active');
+                    treeBranch.style.display = 'block';
+                    treeArchive.style.display = 'none';
+                });
+                
+                tabArchive.addEventListener('click', () => {
+                    tabArchive.classList.add('active');
+                    tabBranch.classList.remove('active');
+                    treeArchive.style.display = 'block';
+                    treeBranch.style.display = 'none';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
