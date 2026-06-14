@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Полезные ресурсы и архивы — Родословная</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="./index.html">📂 Родословная<span>.Поиск</span></a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="./index.html">Главная</a></li>
+                    <li><a href="./guide.html">Руководство</a></li>
+                    <li><a href="./pc_structure.html">Структура ПК</a></li>
+                    <li><a href="./templates.html">Конструктор</a></li>
+                    <li><a href="./resources.html" class="active">Ресурсы</a></li>
+                </ul>
+            </nav>
+            <button class="hamburger" aria-label="Открыть меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <h1>Полезные ресурсы и справочник архивов</h1>
+        <p class="page-desc">Основные базы данных для самостоятельного поиска предков в интернете, а также контакты ключевых государственных и военных архивов Российской Федерации.</p>
+
+        <!-- Web Databases Grid -->
+        <section style="margin-bottom: 50px;">
+            <h2 style="margin-bottom: 20px; border-bottom: 2px solid var(--border-color); padding-bottom: 10px;">Генеалогические базы данных и инструменты</h2>
+            <p style="margin-bottom: 25px; font-size: 0.95rem;">Интерактивная подборка полезных ссылок, официальных баз данных, исторических справочников и программного обеспечения для оцифровки и систематизации архива.</p>
+            
+            <div class="filter-row">
+                <label for="resourceFilter">Поиск по инструментам и базам:</label>
+                <input id="resourceFilter" type="search" placeholder="Например: ЦАМО, архив, OCR, GEDCOM, карта...">
+            </div>
+
+            <div class="resource-table-wrap">
+                <table class="resource-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">Ресурс / Программа</th>
+                            <th style="width: 45%;">Назначение и применение</th>
+                            <th style="width: 30%;">Ссылка для перехода</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resourceRows">
+                        <!-- Rows will be injected dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Archive Directory Section -->
+        <section class="archives-directory">
+            <h2>Справочник архивов РФ</h2>
+            
+            <!-- Category Filter Bar -->
+            <div class="archive-filter-bar">
+                <button class="filter-btn active" data-filter="all">Все архивы</button>
+                <button class="filter-btn" data-filter="federal">Федеральные</button>
+                <button class="filter-btn" data-filter="military">Военные</button>
+                <button class="filter-btn" data-filter="regional">Региональные</button>
+            </div>
+
+            <!-- Archives Grid -->
+            <div class="archives-grid">
+                
+                <!-- РГАДА -->
+                <div class="archive-card" data-category="federal">
+                    <div class="archive-type">Федеральный</div>
+                    <h3>РГАДА</h3>
+                    <p>Российский государственный архив древних актов. Основное хранилище документов по истории России до конца XVIII века.</p>
+                    <div class="archive-details">
+                        <div>📍 119435, г. Москва, ул. Большая Пироговская, д. 17</div>
+                        <div>🌐 <a href="http://rgada.info" target="_blank" rel="noopener noreferrer">rgada.info</a></div>
+                    </div>
+                </div>
+
+                <!-- РГИА -->
+                <div class="archive-card" data-category="federal">
+                    <div class="archive-type">Федеральный</div>
+                    <h3>РГИА</h3>
+                    <p>Российский государственный исторический архив. Хранит документы высших органов государственной власти Российской Империи XIX – нач. XX вв.</p>
+                    <div class="archive-details">
+                        <div>📍 195112, г. Санкт-Петербург, Заневский пр., д. 36</div>
+                        <div>🌐 <a href="http://fgia.ru" target="_blank" rel="noopener noreferrer">fgia.ru</a></div>
+                    </div>
+                </div>
+
+                <!-- ГАРФ -->
+                <div class="archive-card" data-category="federal">
+                    <div class="archive-type">Федеральный</div>
+                    <h3>ГАРФ</h3>
+                    <p>Государственный архив Российской Федерации. Документы высших органов власти СССР и РСФСР, личные дела репрессированных, акты ЧГК.</p>
+                    <div class="archive-details">
+                        <div>📍 119435, г. Москва, ул. Большая Пироговская, д. 17</div>
+                        <div>🌐 <a href="http://statearchive.ru" target="_blank" rel="noopener noreferrer">statearchive.ru</a></div>
+                    </div>
+                </div>
+
+                <!-- ЦАМО -->
+                <div class="archive-card" data-category="military">
+                    <div class="archive-type">Военный</div>
+                    <h3>ЦАМО РФ</h3>
+                    <p>Центральный архив Министерства обороны РФ. Документы советской и российской армии с 1941 года по настоящее время.</p>
+                    <div class="archive-details">
+                        <div>📍 142100, Московская обл., г. Подольск, ул. Кирова, д. 74</div>
+                        <div>🌐 <a href="https://archive.mil.ru" target="_blank" rel="noopener noreferrer">archive.mil.ru</a></div>
+                    </div>
+                </div>
+
+                <!-- РГВИА -->
+                <div class="archive-card" data-category="military">
+                    <div class="archive-type">Военный</div>
+                    <h3>РГВИА</h3>
+                    <p>Российский государственный военно-исторический архив. Хранит документы армии Российской империи до марта 1918 года.</p>
+                    <div class="archive-details">
+                        <div>📍 105005, г. Москва, ул. 2-я Бауманская, д. 3</div>
+                        <div>🌐 <a href="http://rgvia.ru" target="_blank" rel="noopener noreferrer">rgvia.ru</a></div>
+                    </div>
+                </div>
+
+                <!-- РГВА -->
+                <div class="archive-card" data-category="military">
+                    <div class="archive-type">Военный</div>
+                    <h3>РГВА</h3>
+                    <p>Российский государственный военный архив. Документы РККА (1918–1940 гг.), Гражданской войны, войск ВЧК-ОГПУ-НКВД.</p>
+                    <div class="archive-details">
+                        <div>📍 125212, г. Москва, ул. Адмирала Макарова, д. 29</div>
+                        <div>🌐 <a href="http://rgvarchive.ru" target="_blank" rel="noopener noreferrer">rgvarchive.ru</a></div>
+                    </div>
+                </div>
+
+                <!-- ГАСО -->
+                <div class="archive-card" data-category="regional">
+                    <div class="archive-type">Региональный</div>
+                    <h3>ГАСО</h3>
+                    <p>Государственный архив Свердловской области. Хранит метрические книги, ревизские сказки и документы по Верхотурскому, Екатеринбургскому уездам Пермской губернии.</p>
+                    <div class="archive-details">
+                        <div>📍 620014, г. Екатеринбург, ул. Вайнера, д. 17</div>
+                        <div>🌐 <a href="http://gaso-ural.ru" target="_blank" rel="noopener noreferrer">gaso-ural.ru</a></div>
+                    </div>
+                </div>
+
+                <!-- ГАТО -->
+                <div class="archive-card" data-category="regional">
+                    <div class="archive-type">Региональный</div>
+                    <h3>ГАТО</h3>
+                    <p>Государственный архив Томской области. Важнейший архив Сибири, хранящий документы по Томской губернии (включавшей ранее Алтай, Кузбасс, Новосибирскую обл.).</p>
+                    <div class="archive-details">
+                        <div>📍 634009, г. Томск, ул. Карла Маркса, д. 26</div>
+                        <div>🌐 <a href="http://gato.tom.ru" target="_blank" rel="noopener noreferrer">gato.tom.ru</a></div>
+                    </div>
+                </div>
+
+                <!-- ЦГИА СПб -->
+                <div class="archive-card" data-category="regional">
+                    <div class="archive-type">Региональный</div>
+                    <h3>ЦГИА СПб</h3>
+                    <p>Центральный государственный исторический архив Санкт-Петербурга. Метрические книги, исповедные ведомости и ревизские сказки по Санкт-Петербургской губернии.</p>
+                    <div class="archive-details">
+                        <div>📍 190121, г. Санкт-Петербург, ул. Псковская, д. 18</div>
+                        <div>🌐 <a href="https://spbarchives.ru" target="_blank" rel="noopener noreferrer">spbarchives.ru</a></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h3>📂 Родословная<span>.Поиск</span></h3>
+                <p>Методические материалы и инструменты для самостоятельного восстановления истории своей семьи в российских архивах.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Разделы сайта</h4>
+                <ul>
+                    <li><a href="./index.html">Главная</a></li>
+                    <li><a href="./guide.html">Пошаговое руководство</a></li>
+                    <li><a href="./pc_structure.html">Организация на ПК</a></li>
+                    <li><a href="./templates.html">Конструктор запросов</a></li>
+                    <li><a href="./resources.html">Полезные ресурсы</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Правовая информация</h4>
+                <p>Все шаблоны соответствуют Федеральному закону № 143-ФЗ «Об актах гражданского состояния» и регламентам Минюста РФ.</p>
+                <p>Сайт работает автономно и не передает вводимые вами данные на сторонние серверы.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Проект «Родословная». Все права защищены.</p>
+            <p>Stage 2 — Static Website Implementation</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./js/data.js"></script>
+    <script src="./js/interactions.js"></script>
+    <script src="./js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const archiveCards = document.querySelectorAll('.archive-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Toggle active button class
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    archiveCards.forEach(card => {
+                        if (filterValue === 'all') {
+                            card.style.display = 'block';
+                        } else {
+                            const cardCat = card.getAttribute('data-category');
+                            if (cardCat === filterValue) {
+                                card.style.display = 'block';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        }
+                    });
+                });
+            });
+
+            // Initialize dynamic resources list
+            if (window.FTInteractions) {
+                window.FTInteractions.initResources();
+            }
+        });
+    </script>
+</body>
+</html>
